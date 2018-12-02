@@ -18,7 +18,7 @@ Template.afFieldInput.helpers({
 
     // We skip the check for existence here so that we can get the `_plain` string
     // even though they don't exist.
-    var templateName = AutoForm.getTemplateName(inputTemplateName, styleTemplateName, self.name, true);
+    var templateName = AutoForm.getTemplateName(inputTemplateName, styleTemplateName, self.name, false);
 
     // Special case: the built-in "plain" template uses the basic input templates for
     // everything, so if we found _plain, we use inputTemplateName instead
