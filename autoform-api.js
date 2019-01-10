@@ -753,13 +753,16 @@ AutoForm.arrayTracker = arrayTracker;
 AutoForm.getInputType = function getInputType(atts) {
   var type;
 
-  atts = AutoForm.Utility.getComponentContext(atts, 'afFieldInput').atts;
+  let c = AutoForm.Utility.getComponentContext(atts, 'afFieldInput');
+  if (!c) return;
+  atts = c.atts;
 
   // If a `type` attribute is specified, we just use that
   if (atts.type) return atts.type;
 
   // Get schema definition, using the item definition for array fields
   var ss = AutoForm.getFormSchema();
+  if (!atts.name) return;
   var schemaType = ss && ss.getQuickTypeForKey(atts.name);
   if (!schemaType) return 'text';
 

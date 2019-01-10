@@ -8,6 +8,7 @@ Template.afFieldInput.helpers({
 
     // Determine what `type` attribute should be if not set
     var inputType = AutoForm.getInputType(this);
+    if (!inputType) return;
     var componentDef = AutoForm._inputTypeDefinitions[inputType];
     if (!componentDef) {
       throw new Error('AutoForm: No component found for rendering input with type "' + inputType + '"');
@@ -35,6 +36,7 @@ Template.afFieldInput.helpers({
   },
   innerContext: function afFieldInputContext() {
     var c = AutoForm.Utility.getComponentContext(this, "afFieldInput");
+    if (!c) return;
     var form = AutoForm.getCurrentDataForForm();
     var formId = form.id;
     var ss = AutoForm.getFormSchema();
@@ -51,6 +53,7 @@ Template.afFieldInput.helpers({
 
     // Determine what `type` attribute should be if not set
     var inputType = AutoForm.getInputType(this);
+    if (!inputType) return;
     var componentDef = AutoForm._inputTypeDefinitions[inputType];
     if (!componentDef) {
       throw new Error('AutoForm: No component found for rendering input with type "' + inputType + '"');

@@ -19,5 +19,9 @@ Template.afQuickFields.helpers({
     }
 
     return _.extend(atts, afQuickFieldsComponentAtts, this);
+  },
+  clearfix: function afQuickFieldsClearfix() {
+    let fieldSchema = AutoForm.getSchemaForField(this.name);
+    return (fieldSchema && fieldSchema.autoform && fieldSchema.autoform.clearfix)
   }
 });

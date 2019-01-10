@@ -439,6 +439,7 @@ Utility = {
    * @return {Object} The object with klass added to the "class" property, creating the property if necessary
    */
   addClass: function addClass(atts, klass) {
+    if (!atts) return;
     if (typeof atts['class'] === 'string') {
       atts['class'] += ' ' + klass;
     } else {

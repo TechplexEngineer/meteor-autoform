@@ -1,5 +1,8 @@
 <template name="afQuickFields">
-  {{#each afFieldNames name=this.name}}
-    {{> afQuickField quickFieldAtts}}
-  {{/each}}
+	{{#each afFieldNames name=this.name}}
+		{{#if clearfix}}
+			<div class="clearfix"></div>
+		{{/if}}
+		{{> afQuickField quickFieldAtts}}
+	{{/each}}
 </template>
